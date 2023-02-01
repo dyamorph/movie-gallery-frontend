@@ -1,0 +1,34 @@
+.header {
+  @apply flex justify-between items-center px-5 py-2 bg-gray-200 shadow-md shadow-gray-200;
+}
+.header_title {
+  @apply font-bold text-lg drop-shadow-lg;
+}
+.list {
+  @apply flex space-x-8;
+}
+.user {
+  @apply flex items-center space-x-4;
+}
+.user_name {
+  @apply underline text-lg;
+}
+.logout_btn {
+  @apply transition-all duration-300 text-purple-700 border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+}
+.login_btns {
+  @apply flex items-center justify-center gap-2;
+}
+.login_btn {
+  @apply transition-all duration-300 text-purple-700 border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none  rounded-lg text-base w-full sm:w-auto px-5 py-2 text-center font-semibold;
+}
+.register_btn {
+  @apply  transition-all duration-300 text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800
+  hover:border-purple-800 focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+}
+.active_link {
+  @apply text-purple-700 font-semibold text-lg;
+}
+.inactive_link {
+  @apply text-black text-lg font-semibold;
+}

@@ -1,0 +1,29 @@
+.login_form {
+  @apply p-8 sm:w-[40%] w-[80%] mx-auto;
+}
+
+.login_heading {
+  @apply text-2xl mb-10 text-center;
+}
+
+.email_label,
+.password_label {
+  @apply block mb-2 text-lg font-medium text-gray-900;
+}
+
+.email_input,
+.password_input {
+  @apply bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:border-purple-500 block w-full p-2.5 focus:outline-none placeholder:text-slate-400;
+}
+
+.remember_label {
+  @apply ml-2 text-sm font-medium text-gray-900;
+}
+
+.remember_input {
+  @apply w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-purple-300;
+}
+
+.submit_btn {
+  @apply text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full sm:w-auto px-6 py-2.5 text-center;
+}

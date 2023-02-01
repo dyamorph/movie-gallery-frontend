@@ -1,0 +1,22 @@
+.form {
+  @apply w-full max-w-sm mx-auto mt-10;
+}
+.movie_field {
+  @apply md:flex md:items-center mb-6;
+}
+.label_text {
+  @apply block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4;
+}
+.movie_input,
+.score_input {
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
+}
+.score_field {
+  @apply md:flex md:items-center mb-6;
+}
+.btn_container {
+  @apply md:flex md:items-center;
+}
+.movie_button {
+  @apply bg-purple-700 text-white hover:bg-purple-800 text-base font-semibold py-2 px-4 rounded;
+}
