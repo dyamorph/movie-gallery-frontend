@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 
 const RegisterPage = () => {
-  const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
   const {
     register,
@@ -24,17 +23,13 @@ const RegisterPage = () => {
     const data = await dispatch(fetchRegister(values));
 
     if (!data.payload) {
-      alert("Failure to login");
+      alert("Failure to register");
     }
 
-    if ("token" in data.payload) {
-      window.localStorage.setItem("token", data.payload.token);
-    }
+    window.localStorage.setItem("token", data.payload.token);
   };
 
-  if (isAuth) {
-    return <Navigate to={"/collection"} />;
-  }
+
 
   return (
     <>
