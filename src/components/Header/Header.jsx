@@ -9,7 +9,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const userData = useSelector((state) => state.auth.data);
-  console.log(userData);
+  console.log('userData: ', userData);
 
   const onClickLogout = () => {
     if (window.confirm("Are you want to logout?")) {

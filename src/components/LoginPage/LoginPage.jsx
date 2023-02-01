@@ -32,7 +32,7 @@ const LoginPage = () => {
   if (isAuth) {
     return <Navigate to={"/collection"} />;
   }
-  console.log(isAuth);
+  console.log('isAuth: ', isAuth);
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.login_form}>
