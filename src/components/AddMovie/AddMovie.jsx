@@ -24,6 +24,8 @@ export default function AddMovie() {
     if (!data.payload) {
       alert("Failure to add a movie");
     }
+    setFilm('')
+    setScore('')
   };
 
   const [movie, setFilm] = useState("");
