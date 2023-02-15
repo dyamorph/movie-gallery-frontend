@@ -3,6 +3,8 @@ import styles from "./AddMovie.module.scss";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { fetchAddMovie } from "../../redux/slices/movies.js";
+import Modal from "../Modal/Modal.jsx";
+import {Link} from "react-router-dom";
 
 export default function AddMovie() {
   const [movie, setFilm] = useState("");
