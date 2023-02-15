@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import { fetchAddMovie } from "../../redux/slices/movies.js";
 
 export default function AddMovie() {
+  const [movie, setFilm] = useState("");
+  const [score, setScore] = useState("");
+  const [modalActive, setModalActive] = useState(false);
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
-
   } = useForm({
     defaultValues: {
       movie: "",
@@ -24,12 +26,12 @@ export default function AddMovie() {
     if (!data.payload) {
       alert("Failure to add a movie");
     }
+    setModalActive(true);
     setFilm('')
     setScore('')
   };
 
-  const [movie, setFilm] = useState("");
-  const [score, setScore] = useState("");
+
   const handleMovieChange = (e) => {
     setFilm(e.target.value);
   };
@@ -89,6 +91,14 @@ export default function AddMovie() {
           </div>
         </div>
       </form>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <p className={styles.modal_text}>
+          The movie was successfully added to the collection
+        </p>
+        <Link className={styles.show_collection_button} to="/collection">
+          Show collection
+        </Link>
+      </Modal>
     </>
   );
 }
