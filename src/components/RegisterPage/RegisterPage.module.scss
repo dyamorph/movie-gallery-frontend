@@ -1,31 +1,36 @@
+.register_page_content {
+  @apply h-screen p-8;
+}
+
 .register_form {
-  @apply p-8 sm:w-[40%] w-[80%] mx-auto;
+  @apply mt-8 p-10 sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto bg-gradient-to-br from-violet-600 to-purple-300
+  rounded-xl shadow-2xl;
 }
 
 .register_heading {
-  @apply text-2xl mb-10 text-center;
+  @apply text-2xl mb-10 text-center text-white;
 }
 
 .email_label,
 .password_label,
 .name_label {
-  @apply block mb-2 text-lg font-medium text-gray-900;
+  @apply block mb-2 text-lg font-medium text-white;
 }
 
 .email_input,
 .password_input,
 .name_input {
-  @apply bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:border-purple-500 block w-full p-2.5 focus:outline-none placeholder:text-slate-400;
+  @apply mb-10 bg-gray-50 text-gray-900 border text-sm rounded-lg focus:border-purple-900 block w-full p-2.5 outline-none placeholder:text-slate-400;
 }
 
-.remember_label {
-  @apply ml-2 text-sm font-medium text-gray-900;
+.btn_container {
+  @apply flex justify-center;
 }
-
-.remember_input {
-  @apply w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-purple-300;
+.register_btn {
+  @apply relative inline-flex items-center justify-center overflow-hidden text-lg
+  font-medium text-purple-900 rounded-lg text-white hover:shadow-lg focus:inset-0.5;
 }
-
-.submit_btn {
-  @apply text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full sm:w-auto px-6 py-2.5 text-center;
+.register_btn_inner {
+  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md
+  bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
 }
