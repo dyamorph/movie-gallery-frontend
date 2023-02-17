@@ -1,11 +1,11 @@
 .header {
-  @apply flex justify-between items-center px-5 py-2 bg-gray-200 shadow-md shadow-gray-200;
+  @apply h-14 flex justify-between items-center px-5 py-2 shadow-md shadow-purple-200 bg-gradient-to-r from-purple-400 via-indigo-400 to-fuchsia-400;
 }
 .header_title {
-  @apply font-bold text-lg drop-shadow-lg;
+  @apply font-bold text-lg drop-shadow-lg hidden sm:inline-block text-white;
 }
 .list {
-  @apply flex space-x-8;
+  @apply space-x-8 mx-auto;
 }
 .user {
   @apply flex items-center space-x-4;
@@ -13,22 +13,22 @@
 .user_name {
   @apply underline text-lg;
 }
-.logout_btn {
-  @apply transition-all duration-300 text-purple-700 border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+.logout_btn,
+.login_btn {
+  @apply transition-all duration-300 text-white border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
 }
 .login_btns {
-  @apply flex items-center justify-center gap-2;
-}
-.login_btn {
-  @apply transition-all duration-300 text-purple-700 border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none  rounded-lg text-base w-full sm:w-auto px-5 py-2 text-center font-semibold;
+  @apply md:flex items-center justify-center gap-2 hidden;
 }
 .register_btn {
-  @apply  transition-all duration-300 text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800
-  hover:border-purple-800 focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+  @apply transition-all duration-300 text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800 hover:border-purple-800 focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
 }
 .active_link {
-  @apply text-purple-700 font-semibold text-lg;
+  @apply text-[#FF73FD] font-semibold text-lg border-b-2;
 }
 .inactive_link {
-  @apply text-black text-lg font-semibold;
+  @apply text-gray-200 text-lg font-semibold;
+}
+.burger_menu_icon {
+  @apply inline-block md:hidden;
 }
