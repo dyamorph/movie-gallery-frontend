@@ -1,26 +1,26 @@
-import React from 'react';
-import { BsSearch } from 'react-icons/bs';
-import styles from './SearchBar.module.scss';
+import React from "react";
+import { BsSearch } from "react-icons/bs";
+import styles from "./SearchBar.module.scss";
 
 const SearchBar = ({ getSearch }) => {
   return (
     <form className={styles.form}>
-      <label className={styles.srLabel} htmlFor="default-search">
+      <label className={styles.label} htmlFor="default-search">
         Search
       </label>
-      <div className="relative ">
-        <div className={styles.searchIcon}>
+      <div className={styles.search_bar}>
+        <div className={styles.search_icon}>
           <BsSearch color="black" size={20} />
         </div>
         <input
-          className={styles.searchInput}
+          className={styles.search_input}
           type="search"
           id="default-search"
           placeholder="Search Films"
           onChange={(event) => getSearch(event.target.value)}
           required
         ></input>
-        <button className={styles.searchButton} type="submit">
+        <button className={styles.search_button} type="submit">
           Search
         </button>
       </div>
