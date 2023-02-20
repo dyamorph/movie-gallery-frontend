@@ -15,7 +15,7 @@
 }
 .logout_btn,
 .login_btn {
-  @apply transition-all duration-300 text-white border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+  @apply transition-all duration-300 text-white border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
 }
 .login_btns {
   @apply md:flex items-center justify-center gap-2 hidden;

@@ -1,13 +1,14 @@
 import { useState } from "react";
 import styles from "./AddMovie.module.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { useForm } from "react-hook-form";
 import { fetchAddMovie } from "../../redux/slices/movies.js";
 import Modal from "../Modal/Modal.jsx";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import Background from "../../assets/movies-bg.png";
 
 export default function AddMovie() {
-  const [movie, setFilm] = useState("");
+  const [movie, setMovie] = useState("");
   const [score, setScore] = useState("");
   const [modalActive, setModalActive] = useState(false);
   const dispatch = useDispatch();
@@ -29,13 +30,12 @@ export default function AddMovie() {
       alert("Failure to add a movie");
     }
     setModalActive(true);
-    setFilm('')
-    setScore('')
+    setScore("");
+    setMovie("");
   };
 
-
   const handleMovieChange = (e) => {
-    setFilm(e.target.value);
+    setMovie(e.target.value);
   };
   const handleScoreChange = (e) => {
     const regExp = /^[0-9\b]+$/;
@@ -45,7 +45,15 @@ export default function AddMovie() {
   };
 
   return (
-    <>
+    <section
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+      }}
+    >
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.movie_field}>
           <div className="md:w-1/3">
@@ -101,6 +109,6 @@ export default function AddMovie() {
           Show collection
         </Link>
       </Modal>
-    </>
+    </section>
   );
 }
