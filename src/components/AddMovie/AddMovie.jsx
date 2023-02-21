@@ -38,7 +38,7 @@ export default function AddMovie() {
     setMovie(e.target.value);
   };
   const handleScoreChange = (e) => {
-    const regExp = /^[0-9\b]+$/;
+    const regExp = /^(10|[1-9])$/;
     if (e.target.value === "" || regExp.test(e.target.value)) {
       setScore(e.target.value);
     }
