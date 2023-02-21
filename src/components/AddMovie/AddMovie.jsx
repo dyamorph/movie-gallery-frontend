@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { fetchAddMovie } from "../../redux/slices/movies.js";
 import Modal from "../Modal/Modal.jsx";
 import { Link } from "react-router-dom";
-import Background from "../../assets/movies-bg.png";
 
 export default function AddMovie() {
   const [movie, setMovie] = useState("");
@@ -45,15 +44,7 @@ export default function AddMovie() {
   };
 
   return (
-    <section
-      style={{
-        backgroundImage: `url(${Background})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        height: "100vh",
-      }}
-    >
+    <section>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.movie_field}>
           <div className="md:w-1/3">

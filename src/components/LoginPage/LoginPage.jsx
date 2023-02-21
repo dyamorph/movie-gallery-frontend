@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLogin, selectIsAuth } from "../../redux/slices/auth.js";
-import Background from '../../assets/movies-bg.png'
 
 const LoginPage = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -37,14 +36,7 @@ const LoginPage = () => {
   }
   console.log(isAuth);
   return (
-    <>
-      <section className={styles.login_page_content}
-               style={{
-                 backgroundImage: `url(${Background})`,
-                 backgroundPosition: 'center',
-                 backgroundSize: 'cover',
-                 backgroundRepeat: 'no-repeat'
-               }}>
+      <section className={styles.login_page_content}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.login_form}>
           <h1 className={styles.login_heading}>Login</h1>
           <div className="mb-6">
@@ -93,7 +85,6 @@ const LoginPage = () => {
           </div>
         </form>
       </section>
-    </>
   );
 };
 

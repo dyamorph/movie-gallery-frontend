@@ -7,6 +7,8 @@ import RegisterPage from "./components/RegisterPage/RegisterPage.jsx";
 import { useDispatch } from "react-redux";
 import { fetchAuthMe } from "./redux/slices/auth.js";
 import { useEffect } from "react";
+import Background from "./assets/movies-bg.png";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -14,7 +16,13 @@ function App() {
     dispatch(fetchAuthMe());
   }, []);
   return (
-    <>
+    <section style={{
+      backgroundImage: `url(${Background})`,
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      height: "100vh",
+    }}>
       <Header />
       <Routes>
         <Route path="/" element={<LoginPage />} />
@@ -23,7 +31,7 @@ function App() {
         <Route path="/user/login" element={<LoginPage />} />
         <Route path="/user/register" element={<RegisterPage />} />
       </Routes>
-    </>
+    </section>
   );
 }
 

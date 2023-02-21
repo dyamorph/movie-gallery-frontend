@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRegister, selectIsAuth } from "../../redux/slices/auth.js";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
-import Background from "../../assets/movies-bg.png";
 
 const RegisterPage = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -37,14 +36,7 @@ const RegisterPage = () => {
   return (
     <>
       <section
-        className={styles.register_page_content}
-        style={{
-          backgroundImage: `url(${Background})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+        className={styles.register_page_content}>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className={styles.register_form}
