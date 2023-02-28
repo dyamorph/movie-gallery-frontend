@@ -11,9 +11,14 @@ export default function Collection() {
   const dispatch = useDispatch();
   const { movies } = useSelector((state) => state.movies);
   const userData = useSelector((state) => state.auth.data);
+  const [searchData, setSearchData] = useState("");
 
   const filtered = movies.items.filter((movie) => {
     return movie.user === userData?._id;
+  });
+
+  const filteredData = filtered.filter((movie) => {
+    return movie.movie.toLowerCase().includes(searchData.toLowerCase());
   });
 
   console.log(filtered.length);
@@ -31,7 +36,7 @@ export default function Collection() {
         <SearchBar getSearchValue={(input) => setSearchData(input)} />
         <section className={styles.card_wrapper}>
           <div className={styles.layout}>
-            {(isMoviesLoading ? [...Array(5)] : filtered).map((obj, index) =>
+            {(isMoviesLoading ? [...Array(5)] : filteredData).map((obj, index) =>
               isMoviesLoading ? (
                 <CardSkeleton key={index} />
               ) : (
