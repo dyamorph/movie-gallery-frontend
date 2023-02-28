@@ -1,9 +1,9 @@
 .section {
-  @apply w-[95%] mx-auto p-8;
+  @apply w-full mx-auto p-10;
 }
 .card_wrapper {
   @apply mx-auto w-full pt-8;
 }
 .layout {
-  @apply grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-10;
+  @apply grid justify-items-center min-[470px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-10;
 }
