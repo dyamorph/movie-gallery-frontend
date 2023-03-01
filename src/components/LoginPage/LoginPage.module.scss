@@ -39,3 +39,6 @@
   @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md
   bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
 }
+.login_btn_inner_disabled {
+  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md bg-gradient-to-br from-purple-400 to-fuchsia-200 bg-opacity-0 hover:bg-opacity-100;
+}
