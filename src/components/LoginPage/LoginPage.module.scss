@@ -17,8 +17,7 @@
 
 .email_input,
 .password_input {
-  @apply mb-10 bg-gray-50 text-gray-900 border text-sm rounded-lg focus:border-purple-900 block w-full
-  p-2.5 outline-none placeholder:text-slate-400;
+  @apply mb-10 bg-gray-50 text-gray-900 border text-sm rounded-lg focus:border-purple-900 block w-full p-2.5 outline-none placeholder:text-slate-400;
 }
 
 .remember_label {
@@ -36,8 +35,7 @@
   font-medium text-purple-900 rounded-lg text-white hover:shadow-lg focus:inset-0.5;
 }
 .login_btn_inner {
-  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md
-  bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
+  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
 }
 .login_btn_inner_disabled {
   @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md bg-gradient-to-br from-purple-400 to-fuchsia-200 bg-opacity-0 hover:bg-opacity-100;
