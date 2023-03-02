@@ -26,10 +26,11 @@
   @apply flex justify-center;
 }
 .register_btn {
-  @apply relative inline-flex items-center justify-center overflow-hidden text-lg
-  font-medium text-purple-900 rounded-lg text-white hover:shadow-lg focus:inset-0.5;
+  @apply relative inline-flex items-center justify-center overflow-hidden text-lg font-medium text-purple-900 rounded-lg text-white hover:shadow-lg focus:inset-0.5;
 }
 .register_btn_inner {
-  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md
-  bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
+  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
+}
+.register_btn_inner_disabled {
+  @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md bg-gradient-to-br from-purple-600 to-fuchsia-500 bg-opacity-0 hover:bg-opacity-100;
 }
