@@ -8,7 +8,8 @@ import { Navigate } from "react-router-dom";
 const RegisterPage = () => {
   const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
-  const userStatus = useSelector((state) => state.auth.status);
+  const userStatus = useSelector((state) => state.auth.loading);
+
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: "",
@@ -17,8 +18,6 @@ const RegisterPage = () => {
     },
     mode: "onChange",
   });
-
-  const isUserRegister = userStatus === "loading";
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchRegister(values));
@@ -83,7 +82,7 @@ const RegisterPage = () => {
               required
             ></input>
           </div>
-          {isUserRegister ? (
+          {userStatus ? (
             <div className={styles.btn_container}>
               <button disabled className={styles.register_btn}>
               <span className={styles.register_btn_inner_disabled}>

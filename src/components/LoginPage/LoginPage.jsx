@@ -8,7 +8,7 @@ import { fetchLogin, selectIsAuth } from "../../redux/slices/auth.js";
 const LoginPage = () => {
   const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
-  const userStatus = useSelector((state) => state.auth.status);
+  const userStatus = useSelector((state) => state.auth.loading);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       email: "",
@@ -16,8 +16,6 @@ const LoginPage = () => {
     },
     mode: "onChange",
   });
-
-  const isUserLoading = userStatus === "loading";
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchLogin(values));
@@ -78,7 +76,7 @@ const LoginPage = () => {
             Remember me
           </label>
         </div>
-        {isUserLoading ? (
+        {userStatus ? (
           <div className={styles.btn_container}>
             <button disabled className={styles.login_btn}>
               <span className={styles.login_btn_inner_disabled}>
