@@ -21,7 +21,7 @@ function App() {
       backgroundPosition: "center",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
-      height: "100%",
+      minHeight: "100vh",
     }}>
       <Header />
       <Routes>

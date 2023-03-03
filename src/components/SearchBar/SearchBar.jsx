@@ -2,7 +2,7 @@ import React from "react";
 import { BsSearch } from "react-icons/bs";
 import styles from "./SearchBar.module.scss";
 
-const SearchBar = ({ getSearch }) => {
+const SearchBar = ({ getSearchValue }) => {
   return (
     <form className={styles.form}>
       <label className={styles.label} htmlFor="default-search">
@@ -15,9 +15,9 @@ const SearchBar = ({ getSearch }) => {
         <input
           className={styles.search_input}
           type="search"
-          id="default-search"
+          id="search"
           placeholder="Search Films"
-          onChange={(event) => getSearch(event.target.value)}
+          onChange={(event) => getSearchValue(event.target.value)}
           required
         ></input>
         <button className={styles.search_button} type="submit">
