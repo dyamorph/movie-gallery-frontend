@@ -15,20 +15,27 @@
 }
 .logout_btn,
 .login_btn {
-  @apply transition-all duration-300 text-purple-700 border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+  @apply transition-all duration-300 text-purple-700 border-2 border-purple-700 hover:bg-purple-700 hover:text-white focus:outline-none rounded-lg text-base w-full px-4 py-2 text-center font-semibold;
+}
+.login_block {
+  @apply md:flex hidden;
 }
 .login_btns {
-  @apply md:flex items-center justify-center gap-2 hidden;
+  @apply flex items-center justify-center gap-2;
 }
 .register_btn {
-  @apply transition-all duration-300 text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800 hover:border-purple-800 focus:outline-none  rounded-lg text-base w-full sm:w-auto px-4 py-2 text-center font-semibold;
+  @apply transition-all duration-300 text-white border-2 border-purple-700 bg-purple-700 hover:bg-purple-800 hover:border-purple-800 focus:outline-none  rounded-lg text-base w-full  px-4 py-2 text-center font-semibold;
 }
 .active_link {
-  @apply text-[#FF73FD] font-semibold text-lg border-b-2;
+  @apply text-[#9D6C99] font-semibold text-lg border-b-2;
 }
 .inactive_link {
   @apply text-gray-200 text-lg font-semibold;
 }
 .burger_menu_icon {
-  @apply inline-block md:hidden;
+  @apply bg-transparent flex md:hidden;
+}
+.burger_login_btns,
+.burger_user {
+  @apply flex flex-col items-center justify-center gap-2 w-full;
 }
