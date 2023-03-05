@@ -1,6 +1,6 @@
 .burger_menu_bar {
-  @apply fixed w-[30%] h-screen top-14 right-0 z-10 flex-col bg-purple-500 bg-opacity-70 p-4 translate-x-[100%] transition-all duration-200;
+  @apply fixed w-[60%] sm:w-[40%] h-screen top-14 right-0 z-10 flex-col bg-purple-500 bg-opacity-70 p-4 translate-x-[100%] transition-all duration-200;
 }
 .burger_menu_bar_active {
-  @apply fixed w-[30%] h-screen top-14 right-0 z-10 flex-col bg-purple-500 bg-opacity-70 p-4 translate-x-[0] transition-all duration-200 overflow-scroll;
+  @apply fixed w-[60%] sm:w-[40%] h-screen top-14 right-0 z-10 flex-col bg-purple-500 bg-opacity-70 p-4 translate-x-[0] transition-all duration-200 overflow-scroll;
 }
