@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./RegisterPage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRegister, selectIsAuth } from "../../redux/slices/auth.js";
+import { fetchRegister } from "../../redux/slices/auth.js";
 import { useForm } from "react-hook-form";
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Modal from "../Modal/Modal.jsx";
 
 const RegisterPage = () => {
-  const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
   const userStatus = useSelector((state) => state.auth.loading);
-
+  const [modalActive, setModalActive] = useState(false);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: "",
@@ -29,62 +29,54 @@ const RegisterPage = () => {
     if ("token" in data.payload) {
       window.localStorage.setItem("token", data.payload.token);
     }
+    setModalActive(true);
   };
 
-  if (isAuth) {
-    return <Navigate to={"/collection"} />;
-  }
-
   return (
-    <>
-      <section
-        className={styles.register_page_content}>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className={styles.register_form}
-        >
-          <h1 className={styles.register_heading}>Register</h1>
-          <div className="mb-6">
-            <label className={styles.name_label} htmlFor="name">
-              Your name
-            </label>
-            <input
-              className={styles.name_input}
-              {...register("name", { required: "Enter your name" })}
-              type="text"
-              id="name"
-              placeholder="John Silver"
-              required
-            ></input>
-          </div>
-          <div className="mb-6">
-            <label className={styles.email_label} htmlFor="email">
-              Your email
-            </label>
-            <input
-              className={styles.email_input}
-              {...register("email", { required: "Enter your email" })}
-              type="email"
-              id="email"
-              placeholder="name@example.com"
-              required
-            ></input>
-          </div>
-          <div className="mb-6">
-            <label className={styles.password_label} htmlFor="password">
-              Your password
-            </label>
-            <input
-              className={styles.password_input}
-              {...register("password", { required: "Enter your password" })}
-              type="password"
-              id="password"
-              required
-            ></input>
-          </div>
-          {userStatus ? (
-            <div className={styles.btn_container}>
-              <button disabled className={styles.register_btn}>
+    <section className={styles.register_page_content}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.register_form}>
+        <h1 className={styles.register_heading}>Register</h1>
+        <div className="mb-6">
+          <label className={styles.name_label} htmlFor="name">
+            Your name
+          </label>
+          <input
+            className={styles.name_input}
+            {...register("name", { required: "Enter your name" })}
+            type="text"
+            id="name"
+            placeholder="John Silver"
+            required
+          ></input>
+        </div>
+        <div className="mb-6">
+          <label className={styles.email_label} htmlFor="email">
+            Your email
+          </label>
+          <input
+            className={styles.email_input}
+            {...register("email", { required: "Enter your email" })}
+            type="email"
+            id="email"
+            placeholder="name@example.com"
+            required
+          ></input>
+        </div>
+        <div className="mb-6">
+          <label className={styles.password_label} htmlFor="password">
+            Your password
+          </label>
+          <input
+            className={styles.password_input}
+            {...register("password", { required: "Enter your password" })}
+            type="password"
+            id="password"
+            required
+          ></input>
+        </div>
+        {userStatus ? (
+          <div className={styles.btn_container}>
+            <button disabled className={styles.register_btn}>
               <span className={styles.register_btn_inner_disabled}>
                 <svg
                   aria-hidden="true"
@@ -105,18 +97,26 @@ const RegisterPage = () => {
                 </svg>
                 Loading...
               </span>
-              </button>
-            </div>
-          ) : (
-            <div className={styles.btn_container}>
-              <button className={styles.register_btn}>
-                <span className={styles.register_btn_inner}>Register</span>
-              </button>
-            </div>
-          )}
-        </form>
-      </section>
-    </>
+            </button>
+          </div>
+        ) : (
+          <div className={styles.btn_container}>
+            <button className={styles.register_btn}>
+              <span className={styles.register_btn_inner}>Register</span>
+            </button>
+          </div>
+        )}
+      </form>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <p className={styles.modal_text}>You have successfully registered!</p>
+        <p className={styles.modal_text}>
+          To add a film to the collection, go to the page:
+        </p>
+        <Link className={styles.show_collection_button} to="/addmovie">
+          Add a movie
+        </Link>
+      </Modal>
+    </section>
   );
 };
 

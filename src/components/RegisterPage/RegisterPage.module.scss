@@ -34,3 +34,9 @@
 .register_btn_inner_disabled {
   @apply relative px-10 py-2.5 transition-all ease-in duration-75 bg-white w-full rounded-md bg-gradient-to-br from-purple-400 to-fuchsia-200 bg-opacity-0 hover:bg-opacity-100;
 }
+.modal_text {
+  @apply mb-5;
+}
+.show_collection_button {
+  @apply block mx-auto w-fit bg-purple-700 text-white hover:bg-purple-800 text-base font-semibold py-2 px-4 rounded;
+}

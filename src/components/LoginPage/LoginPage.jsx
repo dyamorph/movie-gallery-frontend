@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./LoginPage.module.scss";
 import { useForm } from "react-hook-form";
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLogin, selectIsAuth } from "../../redux/slices/auth.js";
+import { selectIsAuth, fetchLogin } from "../../redux/slices/auth.js";
+import Modal from "../Modal/Modal.jsx";
 
 const LoginPage = () => {
   const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
   const userStatus = useSelector((state) => state.auth.loading);
+  const [modalActive, setModalActive] = useState(false);
+
   const { register, handleSubmit } = useForm({
     defaultValues: {
       email: "",
@@ -27,11 +30,9 @@ const LoginPage = () => {
     if ("token" in data.payload) {
       window.localStorage.setItem("token", data.payload.token);
     }
+    setModalActive(true);
   };
 
-  if (isAuth) {
-    return <Navigate to={"/collection"} />;
-  }
   console.log(isAuth);
   return (
     <section className={styles.login_page_content}>
@@ -109,6 +110,21 @@ const LoginPage = () => {
           </div>
         )}
       </form>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <p className={styles.modal_text}>You have successfully registered!</p>
+        <p className={styles.modal_text}>
+          To add a film to the collection go to the page:
+        </p>
+        <Link className={styles.show_collection_button} to="/addmovie">
+          Add a movie
+        </Link>
+        <p className={styles.modal_text}>
+          To see your collection go to the page:
+        </p>
+        <Link className={styles.show_collection_button} to="/collection">
+          Collection
+        </Link>
+      </Modal>
     </section>
   );
 };
