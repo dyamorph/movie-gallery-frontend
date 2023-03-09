@@ -111,7 +111,7 @@ const LoginPage = () => {
         )}
       </form>
       <Modal active={modalActive} setActive={setModalActive}>
-        <p className={styles.modal_text}>You have successfully registered!</p>
+        <p className={styles.modal_text}>You have successfully login!</p>
         <p className={styles.modal_text}>
           To add a film to the collection go to the page:
         </p>
