@@ -2,7 +2,7 @@
   @apply h-14 flex justify-between items-center px-5 py-2 shadow-md shadow-purple-200 bg-gradient-to-r from-purple-400 via-indigo-400 to-fuchsia-400;
 }
 .header_title {
-  @apply font-bold text-lg drop-shadow-lg hidden sm:inline-block text-white;
+  @apply font-bold text-lg drop-shadow-lg hidden sm:inline-block text-white cursor-pointer;
 }
 .list {
   @apply space-x-8 mx-auto;

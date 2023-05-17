@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <span className={styles.header_title}>My Movie Gallery</span>
+      <Link to="/addmovie" className={styles.header_title}>My Movie Gallery</Link>
       <ul className={styles.list}>
         <NavLink
           to="/addmovie"
