@@ -19,7 +19,7 @@ export default function Collection() {
   useEffect(() => {
     dispatch(fetchMovies());
   }, []);
-  console.log(movies.items);
+
   const filteredData = filtered.filter((movie) => {
     return movie.movie.toLowerCase().includes(searchData.toLowerCase());
   });
