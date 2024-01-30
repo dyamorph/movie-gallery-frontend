@@ -15,7 +15,6 @@ export default function Collection() {
   const filtered = movies.items.filter((movie) => {
     return movie.user === userData?._id;
   });
-  console.log(filtered.length);
 
   useEffect(() => {
     dispatch(fetchMovies());
